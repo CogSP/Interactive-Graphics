@@ -1,4 +1,4 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/j4s6epSI)
+
 # project4_Shading
 In this project we will add shading to the WebGL-based triangular mesh rendered we implemented in the previous project. You can read the instructions and see an example of the expected behavior at this link:
 https://graphics.cs.utah.edu/courses/cs4600/fall2023/?prj=5
