@@ -37,9 +37,9 @@ showTexture that is called to specify whether the texture should be displayed.
 
 You are given the following files to help you with this project:
 
-project4.html: This file contains the implementation of the interface and various JavaScript/WebGL functionalities.
-project4.js: This file contains the placeholder of the JavaScript function GetModelViewProjection and class MeshDrawer that you will complete. This file is included by project4.html.
-obj.js: This file implements the OBJ parser and it is included by project4.html.
+project3.html: This file contains the implementation of the interface and various JavaScript/WebGL functionalities.
+project3.js: This file contains the placeholder of the JavaScript function GetModelViewProjection and class MeshDrawer that you will complete. This file is included by project3.html.
+obj.js: This file implements the OBJ parser and it is included by project3.html.
 teapot.obj: A polygonal mesh version of the Utah Teapot.
 bricks.png: A texture image you can display on the Utah Teapot model.
 nyra.obj: A character model by Paul Tosca.
