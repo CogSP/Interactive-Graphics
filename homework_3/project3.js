@@ -29,7 +29,7 @@ function GetModelViewProjection( projectionMatrix, translationX, translationY, t
 }
 
 
-// [TO-DO] Complete the implementation of the following class.
+
 
 class MeshDrawer
 {

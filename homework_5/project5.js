@@ -40,7 +40,7 @@ bool IntersectShadowRay(Ray ray){
 	for ( int i=0; i<NUM_SPHERES; ++i ) {
 		Sphere sphere = spheres[i];
 
-		// TO-DO: Test for ray-sphere intersection
+		// : Test for ray-sphere intersection
 		float discriminant = pow(dot(ray.dir, (ray.pos - sphere.center)), 2.0) - 
 			(dot(ray.dir, ray.dir) * (dot((ray.pos - sphere.center), (ray.pos - sphere.center)) - pow(sphere.radius, 2.0))); 
 
@@ -73,7 +73,7 @@ bool IntersectRay( inout HitInfo hit, Ray ray )
 	for ( int i=0; i<NUM_SPHERES; ++i ) {
 		Sphere sphere = spheres[i];
 
-		// TO-DO: Test for ray-sphere intersection
+		// : Test for ray-sphere intersection
 		float discriminant = pow(dot(ray.dir, (ray.pos - sphere.center)), 2.0) - 
 			(dot(ray.dir, ray.dir) * (dot((ray.pos - sphere.center), (ray.pos - sphere.center)) - pow(sphere.radius, 2.0))); 
 
@@ -82,7 +82,7 @@ bool IntersectRay( inout HitInfo hit, Ray ray )
 			// find the t value of closet ray-sphere intersection
 			float t0 = (-(dot(ray.dir, (ray.pos-sphere.center))) - sqrt(discriminant)) / (dot(ray.dir, ray.dir));
 
-			// TO-DO: If intersection is found, update the given HitInfo
+			// : If intersection is found, update the given HitInfo
 			if( t0 > 0.0 && t0 <= hit.t){
 				foundHit = true;
 
@@ -109,7 +109,7 @@ vec3 Shade( Material mtl, vec3 position, vec3 normal, vec3 view )
 
 	for ( int i=0; i<NUM_LIGHTS; ++i ) {
 		
-		// TO-DO: Check for shadows
+		// : Check for shadows
 		Ray surfaceToLightRay; 
 		surfaceToLightRay.dir = normalize(lights[i].position - position);
 		surfaceToLightRay.pos = position + (surfaceToLightRay.dir) * eplison;  
@@ -118,7 +118,7 @@ vec3 Shade( Material mtl, vec3 position, vec3 normal, vec3 view )
 			// color += vec3(1.0,0.0,0.0);	// Test Shadows
 			color += ambientComponent;
 		}else{
-			// TO-DO: If not shadowed, perform shading using the Blinn model
+			// : If not shadowed, perform shading using the Blinn model
 			vec3 lightDir = normalize((lights[i].position - position));
 			float cosTheta = dot(normal, lightDir);
 			vec3 diffuseComponent = mtl.k_d * lights[i].intensity * max(0.0, cosTheta); 
@@ -150,18 +150,18 @@ vec4 RayTracer( Ray ray )
 			Ray r;	// this is the reflection ray
 			HitInfo h;	// reflection hit info
 			
-			// TO-DO: Initialize the reflection ray
+			// : Initialize the reflection ray
 			r.dir = normalize(ray.dir) - 2.0 * (dot(normalize(ray.dir), hit.normal))* hit.normal;
 			r.pos = hit.position + (r.dir) * 0.0001;
 
 			
 			if ( IntersectRay( h, r ) ) {
-				// TO-DO: Hit found, so shade the hit point
+				// : Hit found, so shade the hit point
 				// clr += vec3(h.normal); // Test reflection intersections
 				// clr += vec3(1.0, 0.0, 0.0);
 				clr += Shade(h.mtl, h.position, h.normal, view);
 				
-				// TO-DO: Update the loop variables for tracing the next reflection ray
+				// : Update the loop variables for tracing the next reflection ray
 				hit = h;
 				ray = r;					
 			} else {
