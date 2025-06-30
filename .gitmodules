@@ -1,0 +1,3 @@
+[submodule "computer-graphics-sandbox"]
+	path = computer-graphics-sandbox
+	url = https://github.com/CogSP/computer-graphics-sandbox.git
